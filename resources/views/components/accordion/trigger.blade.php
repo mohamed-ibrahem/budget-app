@@ -6,10 +6,12 @@
 >
     <button
         :data-state="__getDataState(item)"
-        class="flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all [&[data-state=open]]:text-indigo-500 [&[data-state=open]>svg]:rotate-180"
+        class="flex flex-1 items-center justify-between py-4 text-sm font-medium"
     >
-        {{ $slot }}
+        <span>{{ $slot }}</span>
 
-        <x-lucide-chevron-down class="size-5" />
+        <x-badge variant="secondary">
+            <x-typography.monay>{{ $amount }}</x-typography.monay>
+        </x-badge>
     </button>
 </h3>

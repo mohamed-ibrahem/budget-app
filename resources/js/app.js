@@ -1,5 +1,6 @@
 import collapse from "@alpinejs/collapse";
 import anchor from "@alpinejs/anchor";
+import intersect from "@alpinejs/intersect";
 
 document.addEventListener(
     "alpine:init",
@@ -11,6 +12,7 @@ document.addEventListener(
         }
         window.Alpine.plugin(collapse);
         window.Alpine.plugin(anchor);
+        window.Alpine.plugin(intersect);
     },
     { once: true },
 );

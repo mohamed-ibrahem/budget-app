@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@alpinejs/anchor": "^3.14.3",
-        "@alpinejs/collapse": "^3.14.3"
+        "@alpinejs/collapse": "^3.14.3",
+        "@alpinejs/intersect": "^3.14.3"
     }
 }

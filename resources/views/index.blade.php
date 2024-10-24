@@ -1,20 +1,18 @@
 <x-layouts title="الرئيسية">
     <x-tabs defaultValue="daily">
-        <section class="container">
-            <div class="overflow-y-auto h-[calc(100vh-140px)]">
-                <x-tabs.content value="daily">
-                    <livewire:pages.daily />
-                </x-tabs.content>
-                <x-tabs.content value="monthly">
-                    <livewire:pages.monthly />
-                </x-tabs.content>
-                <x-tabs.content value="transactions">
-                    <livewire:pages.transactions />
-                </x-tabs.content>
-            </div>
+        <section class="container mb-16">
+            <x-tabs.content value="daily">
+                <livewire:pages.daily />
+            </x-tabs.content>
+            <x-tabs.content value="monthly">
+                <livewire:pages.monthly :lazy="true" />
+            </x-tabs.content>
+            <x-tabs.content value="transactions">
+                <livewire:pages.transactions :lazy="true" />
+            </x-tabs.content>
         </section>
 
-        <footer class="bg-white py-2">
+        <footer class="bg-white py-2 fixed bottom-0 inset-x-0 z-50">
             <x-tabs.list>
                 <x-tabs.trigger value="daily">
                     <x-lucide-calendar-arrow-up class="size-5" />

@@ -1,113 +1,46 @@
 <div>
-    <div class="bg-white sticky top-0 z-10">
-        <x-card class="pt-4 pb-1">
-            <x-card.header class="flex-row items-center justify-between py-0">
+    <div class="fixed inset-x-3 top-28 z-50">
+        <x-card class="p-6 shadow-xl backdrop-blur-sm bg-white/95 flex items-center justify-between">
+            <div class="inline-flex flex-col gap-2">
                 <x-card.title>رصيد اليوم</x-card.title>
-                <x-card.description>
-                    <strong>500 جنية</strong>
-                    مرحل من الايام السابقة
-                </x-card.description>
-            </x-card.header>
-            <x-card.content class="pt-4 pb-0">
-                <x-typography.h1>800 <x-typography.small>جنية</x-typography.small></x-typography.h1>
-            </x-card.content>
+                <x-card.description>{{ today()->translatedFormat('l d, F') }}</x-card.description>
+            </div>
+            <div class="relative">
+                <x-typography.h1 class="text-7xl h-12">
+                    <span class="inline-block">{{ $total - $balance[today()->toDateString()] ?? 0 }}</span>
+                    <x-typography.small class="absolute -top-2 left-0 drop-shadow-[1px_1px_0_rgba(255,255,255,1)]">جنية</x-typography.small>
+                </x-typography.h1>
+            </div>
         </x-card>
     </div>
 
-    <x-accordion
-            type="single"
-            defaultValue="item-1"
-            collapsible
-    >
-        <x-accordion.item value="item-1">
-            <x-accordion.trigger>اليوم</x-accordion.trigger>
-            <x-accordion.content>
-                <div class="overflow-y-auto max-h-[calc(100vh-450px)]">
-                    <div class="flex flex-col gap-2">
-                        <div class="flex items-center gap-1 border p-4 pb-3 rounded-xl">
-                            <x-typography.small class="font-semibold">500.00 <sup>ج</sup></x-typography.small>
-                            <x-typography.small class="flex-1">مشتريات البقالة</x-typography.small>
-                        </div>
-                        <div class="flex items-center gap-1 border p-4 pb-3 rounded-xl">
-                            <x-typography.small class="font-semibold">1000.00 <sup>ج</sup></x-typography.small>
-                            <x-typography.small class="flex-1">دفع فاتورة الكهرباء</x-typography.small>
-                        </div>
-                        <div class="flex items-center gap-1 border p-4 pb-3 rounded-xl">
-                            <x-typography.small class="font-semibold">100.00 <sup>ج</sup></x-typography.small>
-                            <x-typography.small class="flex-1">اجتماع عمل</x-typography.small>
-                        </div>
-                        <div class="flex items-center gap-1 border p-4 pb-3 rounded-xl">
-                            <x-typography.small class="font-semibold">500.00 <sup>ج</sup></x-typography.small>
-                            <x-typography.small class="flex-1">مشتريات البقالة</x-typography.small>
-                        </div>
-                        <div class="flex items-center gap-1 border p-4 pb-3 rounded-xl">
-                            <x-typography.small class="font-semibold">500.00 <sup>ج</sup></x-typography.small>
-                            <x-typography.small class="flex-1">مشتريات البقالة</x-typography.small>
-                        </div>
-                    </div>
-                </div>
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-2">
-            <x-accordion.trigger>امس</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>قبل امس</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
-        <x-accordion.item value="item-3">
-            <x-accordion.trigger>شهر 8, 2024</x-accordion.trigger>
-            <x-accordion.content>
-                Yes. It adheres to the WAI-ARIA design pattern.
-            </x-accordion.content>
-        </x-accordion.item>
+    <div class="mt-16">
+        <x-accordion type="multiple" defaultValue="item-0-0" collapsible class="space-y-4">
+            @for ($chunk = 0; $chunk < $page; $chunk++)
+                @foreach($chunks[$chunk] as $day)
+                    <x-accordion.item value="item-{{ $chunk }}-{{ $loop->index }}" key="accordion.item-{{ $chunk }}-{{ $loop->index }}">
+                        <x-card key="card-{{ $chunk }}-{{ $loop->index }}" class="py-0 px-2">
+                            <x-card.header key="card.header-{{ $chunk }}-{{ $loop->index }}" class="p-0 sticky top-52 backdrop-blur-sm bg-white/80 z-10">
+                                <x-accordion.trigger key="accordion.trigger-{{ $chunk }}-{{ $loop->index }}">
+                                    @slot('amount')
+                                        <livewire:day-balance key="day-balance-{{ $chunk }}-{{ $loop->index }}" :balance="$balance[$day->toDateString()] ?? 0" />
+                                    @endslot
+                                    {{ $this->getDayName($day) }}
+                                </x-accordion.trigger>
+                            </x-card.header>
+                            <x-card.content key="card.content-{{ $chunk }}-{{ $loop->index }}" class="p-0">
+                                <x-accordion.content key="accordion.content-{{ $chunk }}-{{ $loop->index }}" class="pb-2">
+                                    <livewire:daily-transaction key="daily-transaction-{{ $chunk }}-{{ $loop->index }}" :date="$day" :lazy="true"/>
+                                </x-accordion.content>
+                            </x-card.content>
+                        </x-card>
+                    </x-accordion.item>
+                @endforeach
+            @endfor
+        </x-accordion>
 
-    </x-accordion>
+        @if ($this->hasMorePages())
+            <button x-intersect="$wire.loadMore">جارِ تحميل المزيد....</button>
+        @endif
+    </div>
 </div>
