@@ -12,7 +12,7 @@
             </x-tabs.content>
         </section>
 
-        <footer class="bg-white py-2 fixed bottom-0 inset-x-0 z-50">
+        <footer class="bg-white py-2 fixed bottom-0 inset-x-0 z-50 border-t">
             <x-tabs.list>
                 <x-tabs.trigger value="daily">
                     <x-lucide-calendar-arrow-up class="size-5" />
